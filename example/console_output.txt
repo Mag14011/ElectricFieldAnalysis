@@ -1,0 +1,365 @@
+
+#######################################################################################
+#                        Electric Field Analysis at Probe Atoms                       #
+#                                      Version 1                                      #
+#                        Written by Matthew J. Guberman-Pfeffer                       #
+#                              Last Modified: 11/17/2024                              #
+#                                                                                     #
+#                           Started on: 2024-11-26 01:35:01                           #
+#######################################################################################
+
+
+Reading settings from input.config
+
+Loaded settings:
+topology: omcs_r1274.prmtop
+trajectory: imaged_frms50.xtc
+analysis: total
+frames: all
+environment: (not resname WAT and not resname Na+ and not resname Cl-) and not (resname HEH and resid XXX)
+solvent: resname WAT or resname Na+
+cutoff_range: (1.0, 30.0, 2.0)
+processors: 10
+Number of probe selections: 3
+
+Loading system...
+Topology: omcs_r1274.prmtop
+Trajectory: imaged_frms50.xtc
+Warning: importing 'simtk.openmm' is deprecated.  Import 'openmm' instead.
+System contains 198161 atoms
+
+Analysis plan:
+Running parallel total field analysis
+
+Probe selections to process:
+1. (resname HEH and resid 1274 and name FE)
+2. (resname HEH and resid 1280 and name FE)
+3. (resname HEH and resid 1277 and name FE)
+
+Analyzing frames 0 to 50 with step 1
+
+=== Processing probe 1/3: (resname HEH and resid 1274 and name FE) ===
+Modified environment selection: (not resname WAT and not resname Na+ and not resname Cl-) and not (resname HEH and resid 1274)
+Results will be stored in: FE-HEH1274
+
+Analysis Groups:
+
+=== Probe 1 Analysis ===
+Selection string: '(resname HEH and resid 1274 and name FE)'
+Total atoms: 1
+Total residues: 1
+
+Residue composition:
+  HEH: 1
+
+Total charge: 0.480e
+==================
+
+=== Environment (excluding probe 1) Analysis ===
+Selection string: '(not resname WAT and not resname Na+ and not resname Cl-) and not (resname HEH and resid 1274)'
+Total atoms: 19460
+Total residues: 1320
+
+Residue composition:
+  ALA: 155
+  ARG: 39
+  ASN: 77
+  ASP: 57
+  CYO: 36
+  CYS: 2
+  GLN: 45
+  GLU: 35
+  GLY: 142
+  HEH: 17
+  HIE: 18
+  HIO: 36
+  ILE: 30
+  LEU: 69
+  LYS: 42
+  MET: 27
+  PHE: 35
+  PRN: 36
+  PRO: 55
+  SER: 111
+  THR: 134
+  TRP: 12
+  TYR: 66
+  VAL: 44
+
+Total charge: -30.000e
+==========================================
+
+=== Solvent Analysis ===
+Selection string: 'resname WAT or resname Na+'
+Total atoms: 178614
+Total residues: 59558
+
+Residue composition:
+  Na+: 30
+  WAT: 59528
+
+Total charge: 30.000e
+==================
+
+Running parallel analysis for total electric field...
+
+=== Parallel Electric Field Analysis Started ===
+Time: 2024-11-26 01:35:04
+Using 10 processors for total field calculation
+Analyzing frames 0:50:1
+Analyzing cutoffs from 1.0 to 30.0 Å with step 2.0 Å
+
+Parallel processing setup:
+Total frames to process: 50
+Chunk size: 5
+Number of chunks: 10
+
+Processing trajectory in parallel...
+
+Initializing 10 processors...
+First progress update will appear after initialization and first chunk completion
+Processing frames...
+Processor started on frames 10-14
+Processor started on frames 5-9
+Processor started on frames 30-34
+Processor started on frames 25-29
+Processor started on frames 15-19
+Processor started on frames 40-44
+Processor started on frames 20-24
+Processor started on frames 35-39
+Processor started on frames 45-49
+Processor started on frames 0-4
+Progress: 50/50 frames (100.0%), Rate: 0.8 frames/s, ETA: 0.0ss
+
+Parallel analysis completed in 59.71 seconds
+Created files:
+- Multiple ElecField_cutoff_X.X.dat files in FE-HEH1274/
+- Multiple wrapping_statistics_cutoff_X.X.dat files in FE-HEH1274/
+- FE-HEH1274/ElecField_cutoff_summary.dat: Summary of cutoff analysis
+- FE-HEH1274/wrapping_statistics_summary.dat: Summary of wrapping statistics
+- FE-HEH1274/probe.dat: Reference selection positions
+
+=== Processing probe 2/3: (resname HEH and resid 1280 and name FE) ===
+Modified environment selection: (not resname WAT and not resname Na+ and not resname Cl-) and not (resname HEH and resid 1280)
+Results will be stored in: FE-HEH1280
+
+Analysis Groups:
+
+=== Probe 2 Analysis ===
+Selection string: '(resname HEH and resid 1280 and name FE)'
+Total atoms: 1
+Total residues: 1
+
+Residue composition:
+  HEH: 1
+
+Total charge: 0.666e
+==================
+
+=== Environment (excluding probe 2) Analysis ===
+Selection string: '(not resname WAT and not resname Na+ and not resname Cl-) and not (resname HEH and resid 1280)'
+Total atoms: 19460
+Total residues: 1320
+
+Residue composition:
+  ALA: 155
+  ARG: 39
+  ASN: 77
+  ASP: 57
+  CYO: 36
+  CYS: 2
+  GLN: 45
+  GLU: 35
+  GLY: 142
+  HEH: 17
+  HIE: 18
+  HIO: 36
+  ILE: 30
+  LEU: 69
+  LYS: 42
+  MET: 27
+  PHE: 35
+  PRN: 36
+  PRO: 55
+  SER: 111
+  THR: 134
+  TRP: 12
+  TYR: 66
+  VAL: 44
+
+Total charge: -31.000e
+==========================================
+
+=== Solvent Analysis ===
+Selection string: 'resname WAT or resname Na+'
+Total atoms: 178614
+Total residues: 59558
+
+Residue composition:
+  Na+: 30
+  WAT: 59528
+
+Total charge: 30.000e
+==================
+
+Running parallel analysis for total electric field...
+
+=== Parallel Electric Field Analysis Started ===
+Time: 2024-11-26 01:36:03
+Using 10 processors for total field calculation
+Analyzing frames 0:50:1
+Analyzing cutoffs from 1.0 to 30.0 Å with step 2.0 Å
+
+Parallel processing setup:
+Total frames to process: 50
+Chunk size: 5
+Number of chunks: 10
+
+Processing trajectory in parallel...
+
+Initializing 10 processors...
+First progress update will appear after initialization and first chunk completion
+Processing frames...
+Processor started on frames 5-9
+Processor started on frames 10-14
+Processor started on frames 0-4
+Processor started on frames 15-19
+Processor started on frames 20-24
+Processor started on frames 30-34
+Processor started on frames 40-44
+Processor started on frames 45-49
+Processor started on frames 25-29
+Processor started on frames 35-39
+Progress: 50/50 frames (100.0%), Rate: 0.8 frames/s, ETA: 0.0ss
+
+Parallel analysis completed in 60.08 seconds
+Created files:
+- Multiple ElecField_cutoff_X.X.dat files in FE-HEH1280/
+- Multiple wrapping_statistics_cutoff_X.X.dat files in FE-HEH1280/
+- FE-HEH1280/ElecField_cutoff_summary.dat: Summary of cutoff analysis
+- FE-HEH1280/wrapping_statistics_summary.dat: Summary of wrapping statistics
+- FE-HEH1280/probe.dat: Reference selection positions
+
+=== Processing probe 3/3: (resname HEH and resid 1277 and name FE) ===
+Modified environment selection: (not resname WAT and not resname Na+ and not resname Cl-) and not (resname HEH and resid 1277)
+Results will be stored in: FE-HEH1277
+
+Analysis Groups:
+
+=== Probe 3 Analysis ===
+Selection string: '(resname HEH and resid 1277 and name FE)'
+Total atoms: 1
+Total residues: 1
+
+Residue composition:
+  HEH: 1
+
+Total charge: 0.666e
+==================
+
+=== Environment (excluding probe 3) Analysis ===
+Selection string: '(not resname WAT and not resname Na+ and not resname Cl-) and not (resname HEH and resid 1277)'
+Total atoms: 19460
+Total residues: 1320
+
+Residue composition:
+  ALA: 155
+  ARG: 39
+  ASN: 77
+  ASP: 57
+  CYO: 36
+  CYS: 2
+  GLN: 45
+  GLU: 35
+  GLY: 142
+  HEH: 17
+  HIE: 18
+  HIO: 36
+  ILE: 30
+  LEU: 69
+  LYS: 42
+  MET: 27
+  PHE: 35
+  PRN: 36
+  PRO: 55
+  SER: 111
+  THR: 134
+  TRP: 12
+  TYR: 66
+  VAL: 44
+
+Total charge: -31.000e
+==========================================
+
+=== Solvent Analysis ===
+Selection string: 'resname WAT or resname Na+'
+Total atoms: 178614
+Total residues: 59558
+
+Residue composition:
+  Na+: 30
+  WAT: 59528
+
+Total charge: 30.000e
+==================
+
+Running parallel analysis for total electric field...
+
+=== Parallel Electric Field Analysis Started ===
+Time: 2024-11-26 01:37:04
+Using 10 processors for total field calculation
+Analyzing frames 0:50:1
+Analyzing cutoffs from 1.0 to 30.0 Å with step 2.0 Å
+
+Parallel processing setup:
+Total frames to process: 50
+Chunk size: 5
+Number of chunks: 10
+
+Processing trajectory in parallel...
+
+Initializing 10 processors...
+First progress update will appear after initialization and first chunk completion
+Processing frames...
+Processor started on frames 10-14
+Processor started on frames 0-4
+Processor started on frames 25-29
+Processor started on frames 5-9
+Processor started on frames 45-49
+Processor started on frames 15-19
+Processor started on frames 30-34
+Processor started on frames 40-44
+Processor started on frames 20-24
+Processor started on frames 35-39
+Progress: 50/50 frames (100.0%), Rate: 0.8 frames/s, ETA: 0.0ss
+
+Parallel analysis completed in 59.04 seconds
+Created files:
+- Multiple ElecField_cutoff_X.X.dat files in FE-HEH1277/
+- Multiple wrapping_statistics_cutoff_X.X.dat files in FE-HEH1277/
+- FE-HEH1277/ElecField_cutoff_summary.dat: Summary of cutoff analysis
+- FE-HEH1277/wrapping_statistics_summary.dat: Summary of wrapping statistics
+- FE-HEH1277/probe.dat: Reference selection positions
+
+Analysis complete!
+
+Per-probe directories created:
+
+FE-HEH1274/
+  - Multiple ElecField_cutoff_X.X.dat files
+  - Multiple wrapping_statistics_cutoff_X.X.dat files
+  - ElecField_cutoff_summary.dat: Summary of cutoff analysis
+  - probe.dat: Reference selection positions
+
+FE-HEH1280/
+  - Multiple ElecField_cutoff_X.X.dat files
+  - Multiple wrapping_statistics_cutoff_X.X.dat files
+  - ElecField_cutoff_summary.dat: Summary of cutoff analysis
+  - probe.dat: Reference selection positions
+
+FE-HEH1277/
+  - Multiple ElecField_cutoff_X.X.dat files
+  - Multiple wrapping_statistics_cutoff_X.X.dat files
+  - ElecField_cutoff_summary.dat: Summary of cutoff analysis
+  - probe.dat: Reference selection positions
+
